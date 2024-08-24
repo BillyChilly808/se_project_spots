@@ -9,6 +9,7 @@
   height: 190px;
   width: 190px;
   border-radius: 8px;
+  object-fit: cover;
 }
 
 .profile__column {
@@ -50,6 +51,7 @@
   border: none;
   background-color: transparent;
   text-align: left;
+  cursor: pointer;
 }
 
 .profile__edit-btn:hover {
@@ -63,12 +65,12 @@
 .profile__add-btn {
   margin: auto 0 0 auto;
   height: 52px;
-  width: 100%
   border: none;
   border-radius: 8px;
   padding: 18px 32px;
   background-color: #212121;
   color: white;
+  cursor: pointer;
 }
 
 .profile__add-btn:hover {

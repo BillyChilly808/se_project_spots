@@ -1,6 +1,9 @@
 .footer {
-  text-align: center;
-  color: rgba(33, 33, 33, 0.7);
   padding: 60px 0;
   background-color: #fcf5e5;
+}
+
+.footer__copyright {
+  text-align: center;
+  color: rgba(33, 33, 33, 0.7);
 }
