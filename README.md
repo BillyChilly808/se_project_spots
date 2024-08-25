@@ -13,7 +13,7 @@ Project 3 incorporates media queries to see the two different layouts of the pro
 
 **Video**
 
-![Video of an Overview of Project 3: Spots](https://drive.google.com/file/d/1yL3H19JulP-ant6vVhEUZEwMontv16Y8/view?usp=sharing)
+[Video of Overview on Project 3: Spots](https://drive.google.com/file/d/1yL3H19JulP-ant6vVhEUZEwMontv16Y8/view?usp=sharing)
 
 **GitHub Pages**
 
