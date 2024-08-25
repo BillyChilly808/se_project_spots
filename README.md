@@ -11,6 +11,10 @@ Project 3 incorporates media queries to see the two different layouts of the pro
 - Responsive Design
 - Grid & Flexbox
 
+**Video**
+
+![Video of an Overview of Project 3: Spots](https://drive.google.com/file/d/1yL3H19JulP-ant6vVhEUZEwMontv16Y8/view?usp=sharing)
+
 **GitHub Pages**
 
 - [Link to the project on GitHub Pages](https://billychilly808.github.io/se_project_spots/)
@@ -23,7 +27,3 @@ Project 3 incorporates media queries to see the two different layouts of the pro
 
 ![Figma's Desktop view of the project](./images/demo/figma%20desktop.png)
 ![Figma's Mobile view of the project](./images/demo/project%203%20mobile%20view.png)
-
-**Video**
-
-![Video of an Overview of Project 3: Spots](https://drive.google.com/file/d/1yL3H19JulP-ant6vVhEUZEwMontv16Y8/view?usp=sharing)
