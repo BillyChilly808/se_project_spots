@@ -7,7 +7,7 @@
 }
 
 .card__like-btn {
-  background-image: url(../images/heart.svg);
+  background-image: url(../images/heart_black.svg);
   width: 23px;
   height: 20px;
   border: none;
@@ -17,7 +17,6 @@
 }
 
 .card__like-btn:hover {
-  background-image: url(../images/heart_black.svg);
   opacity: 100%;
 }
 
@@ -36,10 +35,8 @@
   font-weight: 500;
   text-overflow: ellipsis;
   overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
   max-width: 380px;
+  white-space: nowrap;
 }
 
 @media screen and (max-width: 627px) {
@@ -56,5 +53,6 @@
     height: 18px;
     background-position: center;
     background-size: cover;
+    cursor: pointer;
   }
 }
