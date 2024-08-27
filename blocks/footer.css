@@ -6,4 +6,5 @@
 .footer__copyright {
   text-align: center;
   color: rgba(33, 33, 33, 0.7);
+  margin: 0;
 }
