@@ -64,11 +64,14 @@ const cardList = document.querySelector(".cards__list");
 
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
-  const linkImage = { name: cardLinkInput, link: "" };
-  const inputValues = { name: cardNameInput, link: "" };
+  const inputValues = {
+    name: cardNameInput.value,
+    link: cardLinkInput.value,
+  };
   const cardElement = getCardElement(inputValues);
   cardList.prepend(cardElement);
   closeModal(cardModal);
+  cardForm.reset();
 }
 
 function getCardElement(data) {
