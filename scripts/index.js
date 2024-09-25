@@ -70,6 +70,7 @@ function handleAddCardSubmit(evt) {
   };
   const cardElement = getCardElement(inputValues);
   cardList.prepend(cardElement);
+  closeModal(cardModal);
   cardForm.reset();
 }
 
