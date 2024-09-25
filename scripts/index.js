@@ -106,12 +106,12 @@ function getCardElement(data) {
     previewModalCaptionEl.textContent = data.name;
   });
 
-  previewModalCloseBtn.addEventListener("click", () => {
-    closeModal(previewModal);
-  });
-
   return cardElement;
 }
+
+previewModalCloseBtn.addEventListener("click", () => {
+  closeModal(previewModal);
+});
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
