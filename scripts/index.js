@@ -98,7 +98,6 @@ function getCardElement(data) {
   });
 
   cardDeleteBtn.addEventListener("click", () => {
-    const cardDelete = cardDeleteBtn.closest(".card");
     if (cardDelete) {
       cardDelete.remove();
     }
@@ -155,10 +154,11 @@ function handleEditFormSubmit(evt) {
 profileEditButton.addEventListener("click", () => {
   editModalNameInput.value = profileName.textContent;
   editModalDescriptionInput.value = profileDescription.textContent;
-  resetValidation(editFormElement, [
-    editModalNameInput,
-    editModalDescriptionInput,
-  ]);
+  resetValidation(
+    editFormElement,
+    [editModalNameInput, editModalDescriptionInput],
+    settings
+  );
   openModal(editProfileModal);
 });
 
