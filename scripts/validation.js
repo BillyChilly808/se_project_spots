@@ -10,13 +10,13 @@ const settings = {
 const showInputError = (formEl, inputEl, errorMessage) => {
   const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
   errorMessageEl.textContent = errorMessage;
-  inputEl.classList.add("modal__input_type_error");
+  inputEl.classList.add(settings.inputErrorClass);
 };
 
 const hideInputError = (formEl, inputEl) => {
   const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
   errorMessageEl.textContent = "";
-  inputEl.classList.remove("modal__input_type_error");
+  inputEl.classList.remove(settings.inputErrorClass);
 };
 
 const checkInputValidity = (formEl, inputEl) => {
@@ -38,13 +38,13 @@ const toggleButtonState = (inputList, buttonElement) => {
     disableButton(buttonElement);
   } else {
     buttonElement.disabled = false;
-    buttonElement.classList.remove("modal__submit-btn_disabled");
+    buttonElement.classList.remove(settings.inactiveButtonClass);
   }
 };
 
 const disableButton = (buttonElement, config) => {
   buttonElement.disabled = true;
-  buttonElement.classList.add("modal__submit-btn_disabled");
+  buttonElement.classList.add(settings.inactiveButtonClass);
 };
 
 const resetValidation = (formEl, inputList) => {

@@ -127,7 +127,7 @@ function openModal(modal) {
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
   modal.removeEventListener("mousedown", handleClickOverlay);
-  document.addEventListener("keydown", handleEscClose);
+  document.removeEventListener("keydown", handleEscClose);
 }
 
 function handleClickOverlay(evt) {
