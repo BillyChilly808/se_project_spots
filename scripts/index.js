@@ -98,9 +98,7 @@ function getCardElement(data) {
   });
 
   cardDeleteBtn.addEventListener("click", () => {
-    if (cardDelete) {
-      cardDelete.remove();
-    }
+    cardElement.remove();
   });
 
   cardImageEl.addEventListener("click", () => {
