@@ -12,6 +12,28 @@
   object-fit: cover;
 }
 
+.profile__avatar-container {
+  position: relative;
+}
+
+.profile__avatar-btn {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  visibility: hidden;
+}
+
+.profile__avatar-container:hover .profile__avatar-btn {
+  visibility: visible;
+}
+
+.profile__avatar-btn::after {
+  content: "Edit Avatar";
+}
+
 .profile__column {
   display: flex;
   flex-direction: column;
@@ -119,5 +141,13 @@
     margin-bottom: 32px;
     max-width: 288px;
     width: 100%;
+  }
+
+  .profile__avatar-btn {
+    visibility: visible;
+  }
+
+  .profile__avatar-btn::after {
+    /* to do - set content of ::after element to "" */
   }
 }
