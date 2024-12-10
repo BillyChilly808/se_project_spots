@@ -40,6 +40,12 @@
   object-fit: contain;
 }
 
+.modal__delete {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
 .modal__container {
   background: #fff;
   border-radius: 8px;
@@ -65,7 +71,7 @@
   right: 50px;
   width: 40px;
   height: 40px;
-  background-image: url(/images/x.svg);
+  background-image: url("../images/x.svg");
   background-position: center;
   border: 0;
   background-color: transparent;
@@ -119,6 +125,41 @@
   font-weight: 500;
   line-height: 17.6px;
   text-align: left;
+}
+
+.modal__submit-btn_delete {
+  font-size: 16px;
+  line-height: 1;
+  width: 156px;
+  padding: 18px 0;
+  background-color: #ff6565;
+  color: white;
+  border-radius: 8px;
+  border: 0;
+  transition: background 0.3s;
+  font-family: "Poppins", Helvetica, sans-serif;
+}
+
+.modal__submit-btn_delete:hover {
+  background-color: #ff3333;
+}
+
+.modal__cancel-btn {
+  font-size: 16px;
+  line-height: 1;
+  width: 156px;
+  padding: 18px 0;
+  background-color: white;
+  color: black;
+  border-radius: 8px;
+  border: 0;
+  transition: background 0.3s;
+  font-family: "Poppins", Helvetica, sans-serif;
+}
+
+.modal__cancel-btn:hover {
+  background-color: black;
+  color: white;
 }
 
 .modal__submit-btn {
