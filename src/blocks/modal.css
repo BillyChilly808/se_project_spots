@@ -127,7 +127,7 @@
   text-align: left;
 }
 
-.modal__delete-btn {
+.modal__submit-btn_delete {
   font-size: 16px;
   line-height: 1;
   width: 156px;
@@ -140,7 +140,7 @@
   font-family: "Poppins", Helvetica, sans-serif;
 }
 
-.modal__delete-btn:hover {
+.modal__submit-btn_delete:hover {
   background-color: #ff3333;
 }
 

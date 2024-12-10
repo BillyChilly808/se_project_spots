@@ -5,11 +5,20 @@ class Api {
     this._baseUrl = baseUrl;
     this._headers = headers;
   }
-  // TODO Create another method, getUserInfo (different base url)
 
   getAppInfo() {
-    // TODO call getUserInfo in this array
-    return Promise.all([this.getInitialCards()]);
+    return Promise.all([this.getInitialCards(), this.getUserInfo()]);
+  }
+
+  getUserInfo() {
+    return fetch(`${this._baseUrl}/users/me`, {
+      headers: this._headers,
+    }).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      Promise.reject(`Error: ${res.status}`);
+    });
   }
 
   getInitialCards() {
@@ -23,7 +32,18 @@ class Api {
     });
   }
 
-  // To do - implement POST /cards
+  addCard({ name, link }) {
+    return fetch(`${this._baseUrl}/cards`, {
+      method: "POST",
+      headers: this._headers,
+      body: JSON.stringify({ name, link }),
+    }).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      Promise.reject(`Error: ${res.status}`);
+    });
+  }
 
   editUserInfo({ name, about }) {
     return fetch(`${this._baseUrl}/users/me`, {
@@ -69,6 +89,7 @@ class Api {
   }
 
   changeLikeStatus(id, isLiked) {
+    console.log("changeLikeStatus called with:", { id, isLiked });
     return fetch(`${this._baseUrl}/cards/${id}/likes`, {
       method: isLiked ? "DELETE" : "PUT",
       headers: this._headers,
