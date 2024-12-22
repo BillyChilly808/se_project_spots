@@ -1,5 +1,5 @@
 export function setButtonText(
-  btn,
+  buttonElement,
   isLoading,
   defaultText = "Save",
   loadingText = "Saving..."

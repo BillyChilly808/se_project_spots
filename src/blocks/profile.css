@@ -28,6 +28,7 @@
 
 .profile__avatar-container:hover .profile__avatar-btn {
   visibility: visible;
+  opacity: 0.5;
 }
 
 .profile__avatar-btn::after {
@@ -149,5 +150,6 @@
 
   .profile__avatar-btn::after {
     /* to do - set content of ::after element to "" */
+    /* to do - finish mobile avatar button styles */
   }
 }
