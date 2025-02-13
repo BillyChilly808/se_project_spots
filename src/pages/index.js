@@ -89,23 +89,35 @@ function disableButton(buttonElement, settings) {
 // Handle Add Card
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
+
   const inputValues = {
     name: cardNameInput.value,
     link: cardLinkInput.value,
   };
-  const cardElement = getCardElement(inputValues);
-  cardList.prepend(cardElement);
-  evt.target.reset();
-  disableButton(cardSubmitButton, settings);
-  closeModal(cardModal);
+
+  setButtonText(evt.submitter, "Saving...");
+
+  api
+    .addCard(inputValues)
+    .then((cardData) => {
+      const cardElement = getCardElement(cardData);
+      cardList.prepend(cardElement);
+      closeModal(cardModal);
+      evt.target.reset();
+      disableButton(cardSubmitButton, settings);
+    })
+    .catch(console.error)
+    .finally(() => {
+      setButtonText(evt.submitter, false, "Saving...", "Save");
+    });
 }
 
 // Handle Like Card
-function handleLike(evt, cardId) {
+function handleLike(evt, id) {
   evt.target.classList.toggle("card__like-btn_liked");
   const isLiked = evt.target.classList.contains("card__like-btn_liked");
   api
-    .changeLikeStatus(cardId, isLiked)
+    .changeLikeStatus(id, isLiked)
     .then(() => {
       evt.target.classList.toggle("card__like-btn_active");
     })
