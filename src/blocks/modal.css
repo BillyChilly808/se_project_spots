@@ -132,7 +132,7 @@
   line-height: 1;
   width: 156px;
   padding: 18px 0;
-  background-color: #ff6565;
+  background-color: #ff6565 !important;
   color: white;
   border-radius: 8px;
   border: 0;
@@ -141,7 +141,7 @@
 }
 
 .modal__submit-btn_delete:hover {
-  background-color: #ff3333;
+  background-color: #ff3333 !important;
 }
 
 .modal__cancel-btn {
