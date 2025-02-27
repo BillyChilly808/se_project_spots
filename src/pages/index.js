@@ -2,6 +2,7 @@ import {
   resetValidation,
   enableValidation,
   settings,
+  disableButton,
 } from "../scripts/validation.js";
 
 import "./index.css";
@@ -11,6 +12,8 @@ import plusSrc from "../images/plus.svg";
 import logoSrc from "../images/plus.svg";
 import Api from "../utils/Api.js";
 import { setButtonText } from "../utils/helpers.js";
+import placeholderAvatar from "../images/Avatar.svg";
+import placeholderCard from "../images/card_img_placeholder.svg";
 
 // Initialize API
 const api = new Api({
@@ -71,6 +74,7 @@ const previewModalCloseBtn = previewModal.querySelector(
 
 // Delete Form Elements
 const deleteModal = document.querySelector("#delete-modal");
+const deleteModalCloseButton = deleteModal.querySelector(".modal__close-btn");
 const deleteForm = deleteModal.querySelector(".modal__form");
 const deleteFormCancelBtn = deleteModal.querySelector(".modal__cancel-btn");
 
@@ -79,12 +83,6 @@ document.getElementById("pencil").src = pencilSrc;
 document.getElementById("logo").src = logoSrc;
 document.getElementById("plus").src = plusSrc;
 document.getElementById("bessie-coleman").src = colemanSrc;
-
-// Utility Function
-function disableButton(buttonElement, settings) {
-  buttonElement.disabled = true;
-  buttonElement.classList.add(settings.inactiveButtonClass);
-}
 
 // Handle Add Card
 function handleAddCardSubmit(evt) {
@@ -277,6 +275,10 @@ profileEditButton.addEventListener("click", () => {
     settings
   );
   openModal(editProfileModal);
+});
+
+deleteModalCloseButton.addEventListener("click", () => {
+  closeModal(deleteModal);
 });
 
 editModalCloseButton.addEventListener("click", () => {

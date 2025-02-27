@@ -29,6 +29,7 @@
 .profile__avatar-container:hover .profile__avatar-btn {
   visibility: visible;
   opacity: 0.5;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .profile__avatar-btn::after {
@@ -116,7 +117,11 @@
   .profile__avatar {
     height: 80px;
     width: 80px;
-    margin: 0 0 12px;
+  }
+
+  .profile__avatar-btn {
+    width: 80px;
+    height: 80px;
   }
 
   .profile__edit-btn {
@@ -130,7 +135,7 @@
 
   .profile__name {
     font-size: 20px;
-    margin-bottom: 6px;
+    margin: 12px 0 6px 0;
     max-width: 288px;
   }
 
