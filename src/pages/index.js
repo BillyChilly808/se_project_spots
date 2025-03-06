@@ -29,6 +29,7 @@ const cardTemplate = document.querySelector("#card-template");
 const cardList = document.querySelector(".cards__list");
 
 // Profile Elements
+const profileAvatar = document.querySelector(".profile__avatar");
 const profileEditButton = document.querySelector(".profile__edit-btn");
 const cardModalButton = document.querySelector(".profile__add-btn");
 const profileName = document.querySelector(".profile__name");
@@ -113,11 +114,10 @@ function handleAddCardSubmit(evt) {
 // Handle Like Card
 function handleLike(evt, id) {
   const isLiked = evt.target.classList.contains("card__like-btn_liked");
-  evt.target.classList.toggle("card__like-btn_liked");
   api
     .changeLikeStatus(id, isLiked)
     .then(() => {
-      evt.target.classList.toggle("card__like-btn_active");
+      evt.target.classList.toggle("card__like-btn_liked");
     })
     .catch(console.error);
 }
@@ -167,14 +167,14 @@ function handleEditFormSubmit(evt) {
 // Handle Avatar Update
 function handleAvatarSubmit(evt) {
   evt.preventDefault();
-  setButtonText(evt.submitter, "Saving...");
+  setButtonText(evt.submitter, true);
 
   api
     .editAvatarInfo(avatarLinkInput.value)
     .then((data) => {
       console.log(data);
       if (data.avatar) {
-        document.querySelector(".profile__avatar").src = data.avatar;
+        profileAvatar.src = data.avatar;
       } else {
         console.error("Avatar update failed:", data);
       }
@@ -182,7 +182,7 @@ function handleAvatarSubmit(evt) {
     })
     .catch(console.error)
     .finally(() => {
-      setButtonText(evt.submitter, false, "Saving...", "Save");
+      setButtonText(evt.submitter, false);
     });
 }
 
@@ -256,7 +256,7 @@ api
   .then(([cards, user]) => {
     profileName.textContent = user.name;
     profileDescription.textContent = user.about;
-    document.querySelector(".profile__avatar").src = user.avatar;
+    profileAvatar.src = user.avatar;
 
     cards.forEach((item) => {
       const cardElement = getCardElement(item, user);

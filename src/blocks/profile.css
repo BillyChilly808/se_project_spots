@@ -117,6 +117,7 @@
   .profile__avatar {
     height: 80px;
     width: 80px;
+    margin: 0;
   }
 
   .profile__avatar-btn {
@@ -151,10 +152,16 @@
 
   .profile__avatar-btn {
     visibility: visible;
+    width: 23px;
+    height: 23px;
+    bottom: 10px;
+    right: 5px;
   }
 
   .profile__avatar-btn::after {
-    /* to do - set content of ::after element to "" */
-    /* to do - finish mobile avatar button styles */
+    content: "";
+    display: block;
+    width: 23px;
+    height: 23px;
   }
 }
